@@ -1,0 +1,42 @@
+<h3><%= link_to "戻る", :back, class:"back-btn" %></h3>
+
+<%= render "shared/error", obj: @reservation %>
+
+<div class="show-contener">
+  <div class="show-hotel-image">
+    <% if @room.hotel_image? %>
+      <%= image_tag @room.hotel_image.url, :size => '400x260' %>
+    <% else %>
+      <%= image_tag "default_hotel.png", :size => '400x260' %>
+    <% end %>
+  </div>
+  <div class="show-info">
+    <div class="show-name-charge">
+      <div class="show-room-name"><%= @room.name %></div>
+      <div class="show-room-charge"><span>¥</span><%= @room.charge.to_s(:delimited) %></div>
+    </div>
+    <div><%= @room.address %></div>
+    <div><%= @room.detail %></div>
+    <div class="show-form">
+      <%= form_with model: @reservation, url: confirm_reservations_path(@reservation) do |f| %>
+        <div>
+          <%= f.label :check_in, "チェックイン" %>
+          <%= f.date_field :check_in %>
+        </div>
+        <div>
+          <%= f.label :check_out, "チェックアウト" %>
+          <%= f.date_field :check_out %>
+        </div>
+        <div>
+          <%= f.label :number_of_people, "人数" %>
+          <%= f.number_field :number_of_people %>
+        </div>
+
+        <%= f.hidden_field :user_id, value: @user %>
+        <%= f.hidden_field :room_id, value: @room.id %>
+
+        <div><%= f.submit "予約する"%></div>
+      <% end %>
+    </div>
+  </div>
+</div>

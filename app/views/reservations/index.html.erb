@@ -1,0 +1,38 @@
+<div class="index-container">
+  <h3 class="page-title">予約済み一覧</h3>
+  <table class="index-table">
+    <thead>
+      <tr>
+        <th class="width12">画像</th>
+        <th class="width6">施設名</th>
+        <th class="width46">紹介文</th>
+        <th class="width6">合計料金</th>
+        <th class="width9">チェックイン</th>
+        <th class="width9">チェックアウト</th>
+        <th class="width12">予約確定日時</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <% if reservation.room.hotel_image? %>
+            <td><%= image_tag reservation.room.hotel_image.url, :size => '140x70' %></td>
+          <% else %>
+            <td><%= image_tag "default_hotel.png", :size => '140x70' %></td>
+          <% end %>
+          <td><%= reservation.room.name %></td>
+          <td><%= reservation.room.detail %></td>
+          <td><span>¥</span><%= (reservation.room.charge * reservation.number_of_people * (reservation.check_out - reservation.check_in).to_i).to_s(:delimited) %></td>
+          <td><%= reservation.check_in.to_s(:date_jp) %></td>
+          <td><%= reservation.check_out.to_s(:date_jp) %></td>
+          <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <% if flash[:notice] %>
+    <p class="notice"><%= flash[:notice] %></p>
+  <% end %>
+</div>

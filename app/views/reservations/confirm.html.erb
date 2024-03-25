@@ -1,0 +1,38 @@
+<div class="confirm-container">
+  <h3 class="page-title">予約内容の確認</h3>
+
+  <div>
+    <label>チェックイン</label>
+    <%= @reservation.check_in %>
+  </div>
+  <div>
+    <label>チェックアウト</label>
+    <%= @reservation.check_out %>
+  </div>
+  <div>
+    <label>日数</label>
+    <%= @number_of_days %>
+  </div>
+  <div>
+    <label>人数</label>
+    <%= @reservation.number_of_people %>
+  </div>
+  <div>
+    <label>お支払い金額</label>
+    <div><span>¥</span><%= @total_charge.to_s(:delimited) %></div>
+  </div>
+
+  <div>
+    <%= form_with model: @reservation do |f| %>
+      <%= f.hidden_field :check_in %>
+      <%= f.hidden_field :check_out %>
+      <%= f.hidden_field :number_of_people %>
+      <%= f.hidden_field :user_id %>
+      <%= f.hidden_field :room_id %>
+
+      <%= f.submit "予約する"%>
+    <% end %>
+  </div>
+
+  <div><%= link_to "キャンセル", :back, class:"cancel-btn" %></div>
+</div>

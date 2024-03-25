@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HotelApp2</title>
+    <title>HotelApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,42 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <h1><%= link_to "Hotel App", root_path, class:"link" %></h1>
+      <% if user_signed_in? %>
+        <details>
+          <summary class="account_info">
+            <% if current_user.icon_image? %>
+              <%= image_tag current_user.icon_image.url, :size => '40x40', class:"user_icon" %>
+            <% else %>
+              <%= image_tag "default.png", :size => '40x40', class:"user_icon" %>
+            <% end %>
+            <span class="user_name"><%= current_user.name %></span>
+          </summary>
+          <div>
+            <%= link_to "施設の新規登録", new_room_path, method: :get, class:"link" %>
+            <%= link_to "予約済み一覧", reservations_path, method: :get, class:"link" %>
+            <%= link_to "登録済み一覧", rooms_path, method: :get, class:"link" %>
+            <%= link_to "アカウント", user_path(id: current_user), method: :get, class:"link" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :get, class:"link" %>
+          </div>
+        </details>
+        
+      <% else %>
+        <div>
+          <button><%= link_to "ログイン", new_user_session_path, class: 'post' %></button>
+          <button><%= link_to "新規登録", new_user_registration_path, class: 'post' %></button>
+        </div>
+      <% end %>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <footer>
+      <div>
+        <h1><%= link_to "Hotel App", root_path, class:"link" %></h1>
+        <small>© HotelApp 2023</small>
+      </div>
+    </footer>
   </body>
 </html>

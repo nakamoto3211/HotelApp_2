@@ -1,0 +1,30 @@
+<div class="index-container">
+<h3 class="page-title">登録済み一覧</h3>
+<table class="index-table">
+  <thead>
+    <tr>
+      <th class="width15">画像</th>
+      <th class="width15">施設名</th>
+      <th class="width40">紹介文</th>
+      <th class="width15">料金</th>
+      <th class="width15">作成日</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rooms.each do |room| %>
+      <tr>
+        <% if room.hotel_image? %>
+          <td><%= image_tag room.hotel_image.url, :size => '140x70' %></td>
+        <% else %>
+          <td><%= image_tag "default_hotel.png", :size => '140x70' %></td>
+        <% end %>
+        <td><%= link_to room.name, room %></td>
+        <td><%= room.detail %></td>
+        <td><span>¥</span><%= room.charge.to_s(:delimited) %></td>
+        <td><%= room.created_at.to_s(:date_jp) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
