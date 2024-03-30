@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 10%;
+  box-sizing: border-box;
+}
+
+.page-title {
+  font-size: 30px;
+}
+
+// application.html
+header {
+  width: 100%;
+  height: 80px;
+  background-color: navy;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post {
+  text-decoration: none;
+  color: navy;
+}
+
+.link{
+  text-decoration: none;
+  color: #fff;
+  margin-left: 20px;
+}
+
+.account_info{
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  color: #fff;
+}
+
+.user_icon {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user_name {
+  margin-right: 20px;
+}
+
+footer {
+  width: 100%;
+  background-color: navy;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+}
+
+// home.html
+.home_body {
+  width: fit-content;
+  text-align: center;
+  margin: 70px auto 0;
+}
+
+.home-area {
+  width: fit-content;
+  margin: 100px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.home-area > h2 {
+  width: 100%;
+}
+
+.home-area > div {
+
+}
+
+.img-item {
+  object-fit: cover;
+}
+
+.home_body > h1 {
+  font-size: 50px;
+}
+
+.home_body > button {
+  display: block;
+  background-color: #00bff8;
+  border-bottom: 5px solid #0090bb;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  padding: 6px 20px;
+  border-radius: 20px;
+}
+
+.search_btn {
+  color: #fff;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.home_body > button:hover {
+  margin-top: 3px;
+  color: #fff;
+  background: #00bff8;
+  border-bottom: 2px solid #0090bb;
+}
+
+// search.html
+.search-window {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.search-count {
+  margin: 20px 0 20px 270px;
+}
+
+.room-box {
+  width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.room-elements {
+  display: flex;
+  flex-direction: column;
+  width: calc(33% - 66px);
+  background-color: #fff8f1;
+  margin: 0 30px;
+  margin-bottom: 15px;
+}
+
+.image-fit {
+  object-fit: fill;
+  width: 100%;
+}
+
+.show-btn {
+  text-decoration: none;
+  color: #fff;
+  background-color: orange;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+// room_show.html
+.show-contener {
+  display: flex;
+  margin: 50px 0 0 150px;
+}
+
+.show-info {
+  margin-left: 100px;
+}
+
+.show-info > div {
+  margin-top: 10px;
+}
+
+.show-name-charge {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-room-name {
+  font-size: 30px;
+  margin-right: 50px;
+}
+
+.show-room-charge {
+  color: #FF9966;
+  font-size: 30px;
+}
+
+.back-btn {
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 10px;
+  color: navy;
+}
+
+.show-form div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+// confirm.html
+.confirm-container {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.confirm-container > div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  text-decoration: none;
+  color: navy;
+}
+
+// 予約一覧画面
+.index-container {
+  margin: 10px 10px 0;
+}
+
+.index-table {
+  width: 100%;
+}
+
+.width6 {
+  width: 6%;
+}
+
+.width9 {
+  width: 9%;
+}
+
+.width12 {
+  width: 12%;
+}
+
+.width46 {
+  width: 46%;
+}
+
+th {
+  text-align: left;
+}
+
+// 施設新規登録画面
+.room-new-container {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.room-new-container div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// ホテル一覧
+.width40 {
+  width: 40%;
+}
+
+.width15 {
+  width: 15%;
+}
+
+// アカウント設定
+.page-title-conf {
+  margin: 10px 0 0 10px;
+}
+
+.Show_Edit_Main {
+  width: 500px;
+  margin: 0 200px;
+}
+
+.ShowPrf > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.ShowAcc {
+  margin-top: 100px;
+}
+
+.ShowAcc > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+// プロフィール編集画面
+.user-prf-edit {
+  width: 500px;
+  margin: 30px 200px;
+}
+
+.user-prf-edit div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// アカウント編集画面
+.user-acc-edit {
+  width: 500px;
+  margin: 30px 200px;
+}
+
+.user-acc-edit div {
+  margin-top: 10px;
+}
+
+// ログインページ
+.login_page {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.login_page div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+// ユーザー新規登録画面
+.user_new_page {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.user_new_page div {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
