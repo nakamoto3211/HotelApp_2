@@ -17,10 +17,10 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     @reservation.user_id = current_user.id
-    if @reservation.save
-      redirect_to reservations_path
+    if params[:back] || !@reservation.save
+      redirect_to room_path(id: @reservation.room_id)
     else
-      render 'rooms/show'
+      redirect_to reservations_path
     end
   end
 
@@ -44,5 +44,4 @@ class ReservationsController < ApplicationController
         sum_of_people = @reservation.number_of_people
       end
     end
-
 end

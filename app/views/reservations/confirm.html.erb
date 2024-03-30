@@ -29,10 +29,8 @@
       <%= f.hidden_field :number_of_people %>
       <%= f.hidden_field :user_id %>
       <%= f.hidden_field :room_id %>
-
       <%= f.submit "予約する"%>
+      <%= f.submit "戻る", name: :back, class:"cancel-btn"%>
     <% end %>
   </div>
-
-  <div><%= link_to "キャンセル", :back, class:"cancel-btn" %></div>
 </div>
