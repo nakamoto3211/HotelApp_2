@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number_of_people: 1
+  check_in: 2024-02-10
+  check_out: 2024-02-10
+  user_id: 1
+
+two:
+  number_of_people: 1
+  check_in: 2024-02-10
+  check_out: 2024-02-10
+  user_id: 1
